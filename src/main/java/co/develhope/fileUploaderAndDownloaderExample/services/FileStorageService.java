@@ -1,12 +1,13 @@
 package co.develhope.fileUploaderAndDownloaderExample.services;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -37,7 +38,10 @@ public class FileStorageService {
         return completeFileName;
     }
 
-    public void download(){
+    public byte[] download(String fileName) throws IOException{
+        File fileFromRepository = new File(fileRepositoryFolder + "\\" + fileName); //definiamo dove sta il file
+        if(!fileFromRepository.exists()) throw new IOException("File does not exists");
+        return IOUtils.toByteArray(new FileInputStream(fileFromRepository));
 
     }
 }
