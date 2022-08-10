@@ -1,9 +1,6 @@
 package co.develhope.fileUploaderAndDownloaderExample.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -26,6 +23,6 @@ public class User {
 
     @Column(unique = true)
     private String email;
-    private String profilePicture;
 
+    private String profilePicture;
 }
