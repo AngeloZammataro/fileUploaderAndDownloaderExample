@@ -3,7 +3,6 @@ package co.develhope.fileUploaderAndDownloaderExample.controllers;
 import co.develhope.fileUploaderAndDownloaderExample.DTO.DownloadProfilePictureDTO;
 import co.develhope.fileUploaderAndDownloaderExample.entities.User;
 import co.develhope.fileUploaderAndDownloaderExample.repositories.UserRepository;
-import co.develhope.fileUploaderAndDownloaderExample.services.FileStorageService;
 import co.develhope.fileUploaderAndDownloaderExample.services.UserService;
 import lombok.SneakyThrows;
 import org.apache.commons.io.FilenameUtils;
